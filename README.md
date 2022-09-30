@@ -1,7 +1,7 @@
 # CSE 11 Fall 2022 PA1 - Grade Calculator
 **Due date: Thurs, Oct 6 @ 11:59PM PDT**
 
-There is an FAQ post [TODO] on Piazza. Please read that post first if you have any questions.
+There is an [FAQ post](https://piazza.com/class/l871flmwsqy8i/post/49) on Piazza. Please read that post first if you have any questions.
 
 ## Goal:
 Programming Assignment 1 is an introduction to Java programming. In this PA, you will get exposure to primitive data types, variables, keyboard input, console output, if-else logic, and loops. 
@@ -31,7 +31,7 @@ The surveys are worth one point each. You will receive credit for submitting it,
 
 Write a program called `GradeCalculator` that
 - reads a student's scores for programming assignments, midterm, and final
-- calculates their overall score by applying weights 
+- calculates their PA score and overall score by applying weights 
 - outputs the overall score and its corresponding letter grade
 
 ### Setup
@@ -54,13 +54,16 @@ To get started on this PA, follow Section 2 in the [instructions](https://piazza
 
 The program reads user inputs from `System.in` using a [Scanner](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Scanner.html) (*remember to import it*). When an user runs `java GradeCalculator`, the input should be taken in via the keyboard and should contain exactly 2 lines detailing the number of programming assignments $n$. You can safely assume that all our inputs will follow this format.
 
-The first line contains $n + 1$ space-separated integers: $n \hspace{1mm} ␣ \hspace{1mm} pa_1 \hspace{1mm} ␣ \hspace{1mm}pa_2\hspace{1mm} ␣ \hspace{1mm}pa_3 \hspace{1mm} ...  \hspace{1mm} pa_n$ ($␣$ means a space), where 
+The first line contains $n + 1$ space-separated integers: $n \hspace{1mm} ␣ \hspace{1mm} pa_1 \hspace{1mm} ␣ \hspace{1mm}pa_2\hspace{1mm} ␣ \hspace{1mm}pa_3 \hspace{1mm} ...  \hspace{1mm} pa_n$, where 
 - $n$ is an integer representing the number of programming assignments
 - $pa_1\hspace{1mm} ␣ \hspace{1mm}pa_2\hspace{1mm} ␣ \hspace{1mm}pa_3 \hspace{1mm} ...  \hspace{1mm} pa_n$ are integers representing the score for each programming assignment
+- $␣$ means a space
 
 The second line contains 2 space-separated integers: the first one represents the midterm score and the second one represents the final score.
 
-If any score is less than 0 or greater than 100, or if the number of programming assignments $n$ is equal to 0, print `invalid input`. You may assume that $n$ will be non-negative.
+If any score is less than 0 or greater than 100, or if the number of programming assignments $n$ is equal to 0, print `invalid input`. You may assume that $n$ will greater or equal to 0.
+
+Additionally, you may also assume that when we divide the total PA score by the given $n$ (the number of PAs), the average will not be a repeating decimal. In other words, you don't need to round anything and recurring average scores such as $97.\overline{6}$ and $97.\overline{142857}$ will not be tested.
 
 #### Calculation
 1. find the average score of programming assignments
@@ -172,11 +175,7 @@ A full style guide can be found [here](https://github.com/CaoAssignments/style-g
     ```
 
 ### Testing
-Try the example inputs described above. Do you get the same results as their corresponding outputs? Now try some of your own inputs, do you get the results you would expect? 
-
-*Note: The total programming assignment scores will always be fully divisible from the given $n$ (the number of PAs).*
-
-
+Try the example inputs described above. Do you get the same results as their corresponding outputs? Now try some of your own inputs, do you get the results you would expect?
 ### Submission & Grading
 To turn in your work for this part, submit the following file(s) to Gradescope.
  - `GradeCalculator.java`
